@@ -1,0 +1,48 @@
+.error-boundary {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  background: var(--gov-bg);
+}
+
+.error-boundary__panel {
+  max-width: 36rem;
+  width: 100%;
+  padding: 1.75rem 1.5rem;
+  background: var(--gov-surface);
+  border: 1px solid var(--gov-border);
+  border-top: 4px solid var(--gov-secondary);
+  border-radius: var(--gov-radius);
+  box-shadow: 0 2px 8px rgba(0, 51, 117, 0.08);
+}
+
+.error-boundary__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+  color: var(--gov-primary);
+}
+
+.error-boundary__text {
+  margin: 0 0 1rem;
+  color: var(--gov-muted);
+  line-height: 1.55;
+}
+
+.error-boundary__pre {
+  font-size: 0.75rem;
+  overflow: auto;
+  max-height: 8rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background: var(--gov-bg);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--gov-radius);
+  color: var(--gov-text);
+}
+
+.error-boundary__btn {
+  width: 100%;
+}

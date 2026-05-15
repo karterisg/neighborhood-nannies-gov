@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Νταντάδες της γειτονιάς — τεκμηρίωση</title>
+  <style>
+    :root { --ink: #1a2332; --muted: #4a5568; --line: #cbd5e1; --surface: #f8fafc; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 2rem 1.5rem 3rem; font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 16px; line-height: 1.55; color: var(--ink); background: #fff;
+      max-width: 1200px; margin-inline: auto;
+    }
+    h1 { font-size: 1.65rem; margin: 0 0 0.75rem; }
+    h2 { font-size: 1.1rem; margin: 1.75rem 0 0.6rem; padding-bottom: 0.25rem; border-bottom: 2px solid var(--line); }
+    p { margin: 0 0 0.85rem; }
+    .lead { color: var(--muted); margin-bottom: 1.25rem; }
+    table { width: 100%; border-collapse: collapse; margin: 0.75rem 0 1.25rem; font-size: 0.95rem; }
+    th, td { border: 1px solid var(--line); padding: 0.45rem 0.6rem; text-align: left; }
+    th { background: var(--surface); font-weight: 600; }
+    pre.cmd {
+      background: var(--surface); border: 1px solid var(--line); padding: 0.75rem;
+      border-radius: 6px; font-size: 0.88rem;
+    }
+    .diagram-wrap {
+      margin: 1.25rem 0 2rem; padding: 1rem 1.25rem; background: var(--surface);
+      border: 1px solid var(--line); border-radius: 8px; overflow-x: auto;
+      page-break-inside: avoid;
+      min-height: 120px;
+    }
+    .diagram-wrap .mermaid {
+      display: flex; justify-content: center; align-items: flex-start;
+    }
+    .diagram-wrap .mermaid svg {
+      max-width: none !important;
+      height: auto !important;
+      transform: scale(1.22);
+      transform-origin: top center;
+    }
+    @media print {
+      body { padding: 0; max-width: none; }
+      .diagram-wrap { break-inside: avoid; }
+      .diagram-wrap .mermaid svg { transform: scale(1.12); }
+    }
+    @page { margin: 14mm; }
+  </style>
+</head>
+<body>
+
+  <h1>Νταντάδες της γειτονιάς</h1>
+  <p class="lead">React + Firebase (Auth, Firestore). Αναζητήσεις, προφίλ, ραντεβού, συμβάσεις, πληρωμές, μηνύματα. Gov-style UI.</p>
+
+  <h2>Εκκίνηση</h2>
+  <pre class="cmd">npm install
+npm start</pre>
+  <p>Build: <code>npm run build</code> → <code>build/</code></p>
+
+  <h2>Stack</h2>
+  <table>
+    <thead><tr><th></th><th></th></tr></thead>
+    <tbody>
+      <tr><td>UI</td><td>React 19</td></tr>
+      <tr><td>Router</td><td>React Router 6</td></tr>
+      <tr><td>Δεδομένα</td><td>Firebase Auth + Firestore</td></tr>
+      <tr><td>Build</td><td>react-scripts</td></tr>
+    </tbody>
+  </table>
+  <p>Config: <code>src/firebase.js</code> · Routes: <code>src/App.js</code></p>
+
+  <h2>Ροή σελίδων</h2>
+  <p><code>PrivateRoute</code> στο <code>App.js</code> όπου απαιτείται συνδεδεμένος χρήστης· οι υπόλοιπες διαδρομές στο σχήμα.</p>
+
+  <div class="diagram-wrap">
+    <pre class="mermaid">
+%%{init: {'flowchart': {'nodeSpacing': 80, 'rankSpacing': 88, 'padding': 28, 'useMaxWidth': false}, 'themeVariables': {'fontSize': '19px'}}}%%
+flowchart TB
+  subgraph pub["Χωρίς υποχρεωτική σύνδεση"]
+    HOME["/ — Αρχική"]
+    LOGIN["/login"]
+    REG["/register"]
+    RESET["/reset-password"]
+    ELI["/eligibility"]
+    HOW["/how-it-works"]
+    FAQ["/faq"]
+    ABOUT["/about-us"]
+    HELP["/help"]
+    OB_P["/onboarding-parent"]
+    OB_N["/onboarding-nanny"]
+  end
+
+  subgraph aut["Με σύνδεση"]
+    PD["/parent-dashboard"]
+    ND["/nanny-dashboard"]
+    ADM["/admin-dashboard"]
+    SN["/search-nannies"]
+    SP["/search-parents"]
+    NP["/nanny/:id"]
+    FP["/nanny/:id/full-profile"]
+    PP["/parent/:id"]
+    BK["/booking/:nannyId"]
+    CT["/contract/:nannyId"]
+    PAY["/payment/:nannyId"]
+    RV["/review/:nannyId"]
+    RVD["/review/:id/details"]
+    ENP["/edit-nanny-profile"]
+    EP["/edit-profile"]
+    CAD["/create-ad"]
+    MADS["/nanny/manage-ads"]
+    MAP["/manage-appointments"]
+    SCH["/schedule"]
+    CV["/completed-vouchers"]
+    VH["/history"]
+    VOU["/vouchers"]
+    PH["/payment-history"]
+    NV["/nanny-vouchers"]
+    NH["/nanny-history"]
+    NOT["/notifications"]
+    IN["/messages/inbox"]
+    OUT["/messages/outbox"]
+    CH["/chat/:id"]
+    ULD["/upload-legal-doc"]
+    ADV["/search/advanced"]
+    CD["/contracts/:id/details"]
+    SET["/settings"]
+  end
+
+  HOME --> LOGIN
+  HOME --> REG
+  LOGIN --> PD
+  LOGIN --> ND
+  SN --> NP
+  NP --> FP
+  NP --> BK
+  BK --> CT
+  CT --> PAY
+  PAY --> RV
+  RV --> RVD
+  IN --> CH
+  OUT --> CH
+    </pre>
+  </div>
+
+  <div class="diagram-wrap">
+    <pre class="mermaid">
+%%{init: {'flowchart': {'nodeSpacing': 56, 'rankSpacing': 60, 'padding': 24, 'useMaxWidth': false}, 'themeVariables': {'fontSize': '24px'}}}%%
+flowchart LR
+  A["Αναζήτηση νταντάδων"] --> B["Προφίλ νταντάς"]
+  B --> C["Κράτηση"]
+  C --> D["Σύμβαση"]
+  D --> E["Πληρωμή"]
+  E --> F["Αξιολόγηση"]
+    </pre>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'neutral',
+      securityLevel: 'loose',
+      flowchart: {
+        useMaxWidth: false,
+        htmlLabels: true,
+        curve: 'basis',
+        nodeSpacing: 80,
+        rankSpacing: 88,
+        padding: 24
+      },
+      themeVariables: {
+        fontSize: '19px',
+        fontFamily: 'Segoe UI, system-ui, sans-serif'
+      }
+    });
+  </script>
+</body>
+</html>

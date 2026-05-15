@@ -1,0 +1,70 @@
+.search-nannies-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-nannies-page h2 {
+    margin-bottom: 20px;
+    color: var(--gov-primary);
+}
+
+.search-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-filters input,
+.search-filters select {
+    padding: 10px;
+    border: 1px solid var(--gov-border);
+    border-radius: var(--gov-radius);
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.search-filters select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+     background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+}
+.advanced-search-button{
+     background-color: var(--gov-link);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+  cursor: pointer;
+    transition: background-color 0.3s ease;
+   text-decoration: none;
+}
+.advanced-search-button:hover{
+      background-color: var(--gov-primary);
+}
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nanny-card {
+    padding: 15px;
+    width: calc(33.33% - 20px);
+}
+.nanny-card h3{
+     font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.view-profile-button {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: var(--gov-radius);
+  transition: background-color 0.3s ease;
+}

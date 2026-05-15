@@ -1,0 +1,80 @@
+@keyframes gov-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.gov-skeleton__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.gov-skeleton {
+  position: relative;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 0.5rem 0 1rem;
+}
+
+.gov-skeleton__title,
+.gov-skeleton__row,
+.gov-skeleton__card {
+  border-radius: var(--gov-radius);
+  background: linear-gradient(
+    110deg,
+    var(--gov-bg) 8%,
+    #e8ecf0 18%,
+    var(--gov-bg) 33%
+  );
+  background-size: 200% 100%;
+  animation: gov-shimmer 1.35s ease-in-out infinite;
+}
+
+.gov-skeleton__title {
+  height: 1.75rem;
+  width: 55%;
+  margin-bottom: 1.25rem;
+}
+
+.gov-skeleton__row {
+  height: 0.85rem;
+  margin-bottom: 0.65rem;
+}
+
+.gov-skeleton__row--long {
+  width: 92%;
+}
+
+.gov-skeleton__row--medium {
+  width: 68%;
+  margin-bottom: 1.5rem;
+}
+
+.gov-skeleton__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gov-skeleton__card {
+  height: 7rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gov-skeleton__title,
+  .gov-skeleton__row,
+  .gov-skeleton__card {
+    animation: none;
+    background: var(--gov-bg);
+  }
+}

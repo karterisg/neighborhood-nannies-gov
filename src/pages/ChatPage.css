@@ -1,0 +1,65 @@
+.chat-page {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 120px);
+   padding: 20px;
+    background-color: var(--gov-surface);
+   margin-left: auto;
+   margin-right: auto;
+    border-radius: var(--gov-radius);
+    width: 100%;
+    max-width: 1280px;
+}
+
+.messages-container {
+   flex: 1;
+   overflow-y: auto;
+   padding-bottom: 10px;
+   display: flex;
+  flex-direction: column;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 8px;
+   margin-bottom: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.message.sent {
+   background-color: rgba(0, 163, 200, 0.12);
+    align-self: flex-end;
+}
+
+.message.received {
+ background-color: var(--gov-bg);
+   align-self: flex-start;
+}
+
+.input-area {
+ display: flex;
+   padding: 10px;
+  border-top: 1px solid var(--gov-border);
+}
+
+.input-area input {
+ flex: 1;
+   padding: 8px;
+  border: 1px solid var(--gov-border);
+  border-radius: var(--gov-radius);
+}
+
+.input-area button {
+     padding: 8px 15px;
+    background-color: var(--gov-link);
+   color: white;
+    border: none;
+  border-radius: var(--gov-radius);
+   margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.input-area button:hover{
+ background-color: var(--gov-primary);
+}

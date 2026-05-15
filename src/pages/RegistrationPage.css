@@ -1,0 +1,70 @@
+.registration-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--gov-bg);
+}
+
+.registration-form {
+    background: var(--gov-surface);
+    padding: 20px;
+    border-radius: var(--gov-radius);
+    border: 1px solid var(--gov-border);
+    box-shadow: 0 1px 3px rgba(0, 55, 117, 0.08);
+    width: 300px;
+    text-align: center;
+}
+
+.registration-form h2 {
+    margin-bottom: 20px;
+    color: var(--gov-primary);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.register-button,
+.taxisnet-register-button{
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.taxisnet-register-button{
+      background-color: var(--gov-secondary);
+}
+.taxisnet-register-button:hover{
+     background-color: var(--gov-primary-muted);
+}
+.register-button:hover {
+    background-color: #218838;
+}
+
+.register-footer{
+    margin-top: 15px;
+}
+.register-footer a{
+    text-decoration: none;
+    color: var(--gov-link);
+}

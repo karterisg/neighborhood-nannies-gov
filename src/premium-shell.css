@@ -1,0 +1,298 @@
+/**
+ * Premium shell — ίδια αισθητική γλώσσα με την αρχική (κάρτες, τυπογραφία, auth, φίλτρα).
+ * Φορτώνεται μετά το gov-pages.css
+ */
+
+/* —— Επικεφαλίδες περιεχομένου (χρησιμοποιούνται σε δημόσιες σελίδες) —— */
+.page-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gov-secondary);
+  margin: 0 0 0.4rem;
+}
+
+.page-lead {
+  margin: 0 0 1.75rem;
+  max-width: 40rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--gov-muted);
+}
+
+.how-footer,
+.eligibility-footer {
+  margin: 1.5rem 0 0;
+  font-size: 0.95rem;
+  color: var(--gov-muted);
+  text-align: center;
+}
+
+.how-footer a,
+.eligibility-footer a {
+  font-weight: 600;
+  color: var(--gov-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.how-footer a:hover,
+.eligibility-footer a:hover {
+  color: var(--gov-link-hover);
+}
+
+/* —— Ενότητες περιεχομένου (FAQ, eligibility, κ.λπ.) —— */
+.eligibility-page .criteria-section,
+.how-it-works-page .steps-section,
+.faq-page .faq-section,
+.about-us-page .about-wrapper,
+.help-page .help-content,
+.contact-us-page .contact-wrapper,
+.onboarding-page .onboarding-content {
+  background: linear-gradient(180deg, #fafbfd 0%, #ffffff 55%);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--premium-radius-sm, 12px);
+  padding: 1.35rem 1.45rem;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 1px 3px rgba(0, 55, 117, 0.06);
+  transition: box-shadow 0.22s ease, transform 0.22s ease, border-color 0.22s ease;
+}
+
+@media (hover: hover) {
+  .eligibility-page .criteria-section:hover,
+  .how-it-works-page .steps-section:hover,
+  .faq-page .faq-section:hover,
+  .about-us-page .about-wrapper:hover,
+  .help-page .help-content:hover,
+  .contact-us-page .contact-wrapper:hover,
+  .onboarding-page .onboarding-content:hover {
+    box-shadow: 0 14px 36px rgba(2, 28, 60, 0.08);
+    border-color: rgba(0, 163, 200, 0.28);
+    transform: translateY(-1px);
+  }
+}
+
+.eligibility-page .criteria-section h3,
+.how-it-works-page .steps-section h3,
+.faq-page .faq-section h3 {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--gov-primary);
+}
+
+.faq-page .faq-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* —— Φίλτρα αναζήτησης —— */
+.search-nannies-page .search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.35rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--premium-radius-sm, 12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.search-parents-page .search-form {
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.35rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid var(--gov-border);
+  border-radius: var(--premium-radius-sm, 12px);
+}
+
+/* —— Auth (εγγραφή / σύνδεση / reset) —— */
+.login-page,
+.registration-page,
+.password-reset-page {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem !important;
+  background: linear-gradient(165deg, #dfeaf8 0%, #e8eef6 35%, #f0f2f6 100%) !important;
+}
+
+.login-form,
+.registration-form,
+.password-reset-page form {
+  width: min(100%, 400px) !important;
+  max-width: 100%;
+  border-radius: var(--premium-radius, 20px) !important;
+  box-shadow: var(--premium-shadow, 0 24px 60px rgba(2, 28, 60, 0.1)) !important;
+  padding: 2rem 1.85rem !important;
+  border: 1px solid var(--premium-border, rgba(11, 92, 171, 0.12)) !important;
+}
+
+.password-reset-page h2 {
+  text-align: center;
+}
+
+/* —— Onboarding (μετά το Navbar) —— */
+.onboarding-layout {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem 3rem;
+  min-height: calc(100vh - var(--gov-header-min-height) - 12px);
+  background: linear-gradient(165deg, #dfeaf8 0%, #e8eef6 35%, #f0f2f6 100%);
+}
+
+.onboarding-page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1.75rem 1.5rem 2rem !important;
+  margin: 0 auto !important;
+  max-width: 560px !important;
+  width: calc(100% - 2rem) !important;
+  background: linear-gradient(180deg, #fafbfd 0%, #ffffff 100%) !important;
+  border-radius: var(--premium-radius, 20px) !important;
+  box-shadow: var(--premium-shadow) !important;
+  border: 1px solid var(--premium-border) !important;
+  border-top: 4px solid var(--gov-secondary) !important;
+}
+
+.onboarding-page h2 {
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+}
+
+.onboarding-page .next-button {
+  margin-top: 1rem;
+  align-self: center;
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* —— Εσωτερικά blocks (προφίλ, συμβόλαια, κ.λπ.) —— */
+[class*='-page'] .profile-section,
+[class*='-page'] .profile-info,
+[class*='-page'] .contract-form,
+[class*='-page'] .contract-info,
+[class*='-page'] .review-info,
+[class*='-page'] .payment-status-section,
+[class*='-page'] .document-form,
+[class*='-page'] .vouchers-container,
+[class*='-page'] .history-section,
+[class*='-page'] .theme-section,
+[class*='-page'] .calendar-wrapper,
+[class*='-page'] .review-status,
+[class*='-page'] .review-form {
+  border-radius: var(--premium-radius-sm, 12px);
+}
+
+[class*='-page'] .profile-section,
+[class*='-page'] .profile-info,
+[class*='-page'] .contract-form,
+[class*='-page'] .contract-info,
+[class*='-page'] .review-info,
+[class*='-page'] .payment-status-section,
+[class*='-page'] .document-form,
+[class*='-page'] .vouchers-container,
+[class*='-page'] .history-section,
+[class*='-page'] .theme-section,
+[class*='-page'] .calendar-wrapper,
+[class*='-page'] .review-status,
+[class*='-page'] .review-form {
+  border: 1px solid var(--gov-border);
+  padding: 1.15rem 1.25rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(180deg, #fafbfd 0%, #ffffff 50%);
+  box-shadow: 0 1px 2px rgba(0, 55, 117, 0.04);
+}
+
+/* —— Κάρτες αποτελεσμάτων —— */
+.nanny-card,
+.parent-card,
+.payment-card,
+.contract-card,
+.review-card,
+.voucher-card,
+.ad-card,
+.notification-card,
+.message-card,
+.appointment-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .nanny-card:hover,
+  .parent-card:hover,
+  .payment-card:hover,
+  .contract-card:hover,
+  .review-card:hover,
+  .voucher-card:hover,
+  .ad-card:hover,
+  .notification-card:hover,
+  .message-card:hover,
+  .appointment-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0, 163, 200, 0.35) !important;
+    box-shadow: 0 14px 36px rgba(2, 28, 60, 0.1) !important;
+  }
+}
+
+/* —— Κουμπιά εντός σελίδων —— */
+[class*='-page'] button:not(.navbar button):not(.navbar-links button),
+[class*='-page'] .save-draft-button,
+[class*='-page'] .submit-contract-button,
+[class*='-page'] .book-button,
+[class*='-page'] .chat-button,
+[class*='-page'] .submit-review-button {
+  border-radius: 10px;
+  font-family: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
+}
+
+[class*='-page'] button:active:not(.navbar button),
+[class*='-page'] .save-draft-button:active,
+[class*='-page'] .submit-contract-button:active {
+  transform: translateY(1px);
+}
+
+/* —— Gov callout / skeleton frame —— */
+.gov-callout {
+  border-radius: var(--premium-radius-sm, 12px) !important;
+  box-shadow: 0 4px 20px rgba(2, 28, 60, 0.06) !important;
+}
+
+.gov-page-frame {
+  padding-bottom: 3rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eligibility-page .criteria-section:hover,
+  .how-it-works-page .steps-section:hover,
+  .faq-page .faq-section:hover,
+  .about-us-page .about-wrapper:hover,
+  .help-page .help-content:hover,
+  .contact-us-page .contact-wrapper:hover,
+  .onboarding-page .onboarding-content:hover,
+  .nanny-card:hover,
+  .parent-card:hover,
+  .payment-card:hover,
+  .contract-card:hover,
+  .review-card:hover,
+  .voucher-card:hover,
+  .ad-card:hover,
+  .notification-card:hover,
+  .message-card:hover,
+  .appointment-card:hover {
+    transform: none;
+  }
+}

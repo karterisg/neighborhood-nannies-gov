@@ -1,0 +1,81 @@
+/**
+ * GOV.GR-inspired design tokens (public services look & feel).
+ * Aligned with the official service design guide: primary in header, secondary accent strip.
+ * Reference: https://guide.services.gov.gr/
+ */
+:root {
+  --gov-primary: #003375;
+  --gov-primary-muted: #1e4a7a;
+  --gov-secondary: #00a3c8;
+  --gov-bg: #f4f5f7;
+  --gov-surface: #ffffff;
+  --gov-text: #111827;
+  --gov-muted: #4b5563;
+  --gov-link: #0b5cab;
+  --gov-link-hover: #003375;
+  --gov-border: #d1d5db;
+  --gov-radius: 4px;
+  --gov-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --gov-header-min-height: 75px;
+  --gov-success: #1a7f37;
+  --gov-success-muted: #145f2a;
+  --gov-danger: #b42318;
+  --gov-danger-bg: #fef3f2;
+  --gov-line-height: 1.5;
+  /* Premium shell (εσωτερικές σελίδες — ίδια αισθητική με την αρχική) */
+  --premium-radius: 20px;
+  --premium-radius-md: 14px;
+  --premium-radius-sm: 12px;
+  --premium-shadow: 0 24px 60px rgba(2, 28, 60, 0.1), 0 8px 24px rgba(2, 28, 60, 0.06);
+  --premium-border: rgba(11, 92, 171, 0.12);
+}
+
+html {
+  background-color: var(--gov-bg);
+  line-height: var(--gov-line-height);
+}
+
+p {
+  line-height: var(--gov-line-height);
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gov-primary);
+  line-height: 1.25;
+}
+
+h4 {
+  font-weight: 600;
+  color: var(--gov-text);
+}
+
+.gov-header-accent {
+  height: 8px;
+  width: 100%;
+  background-color: var(--gov-secondary);
+  flex-shrink: 0;
+}
+
+.gov-logo-wrap {
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.gov-navbar-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+  .gov-navbar-logo {
+    height: 32px;
+  }
+}

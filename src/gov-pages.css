@@ -1,0 +1,241 @@
+/**
+ * Ενοποιημένη εμφάνιση εσωτερικών σελίδων (gov.gr services style).
+ * Εφαρμόζεται μετά τα τοπικά CSS των σελίδων — χρησιμοποιεί μεταβλητές από gov-theme.css.
+ */
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gov-bg);
+}
+
+.gov-page-frame {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.gov-page-frame .gov-skeleton {
+  margin-top: 0.5rem;
+}
+
+.gov-callout {
+  max-width: 40rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--gov-radius);
+  border: 1px solid var(--gov-border);
+  background: var(--gov-surface);
+  box-shadow: 0 1px 2px rgba(0, 51, 117, 0.06);
+}
+
+.gov-callout--error {
+  border-color: #f5c2c7;
+  background-color: #fdf2f2;
+}
+
+/* —— Κύριο περιεχόμενο σελίδων (όχι αρχική) —— */
+.search-nannies-page,
+.search-parents-page,
+.about-us-page,
+.admin-dashboard-page,
+.advanced-search-page,
+.appointment-management-page,
+.booking-page,
+.chat-page,
+.completed-vouchers-page,
+.contact-us-page,
+.contract-details-page,
+.contract-page,
+.create-ad-page,
+.edit-nanny-profile-page,
+.edit-profile-page,
+.eligibility-page,
+.faq-page,
+.full-nanny-profile-page,
+.help-page,
+.history-page,
+.how-it-works-page,
+.inbox-page,
+.login-page,
+.nanny-dashboard-page,
+.nanny-manage-ads-page,
+.nanny-payment-history-page,
+.nanny-profile-page,
+.nanny-voucher-confirmation-page,
+.notifications-page,
+.onboarding-page,
+.outbox-page,
+.parent-dashboard-page,
+.parent-profile-page,
+.password-reset-page,
+.payment-history-page,
+.payment-page,
+.registration-page,
+.review-details-page,
+.review-page,
+.schedule-page,
+.settings-page,
+.upload-legal-doc-page,
+.vouchers-page {
+  max-width: 1280px !important;
+  width: calc(100% - 2.5rem) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+  padding: 1.75rem 1.75rem 2.25rem !important;
+  box-sizing: border-box;
+  background-color: var(--gov-surface) !important;
+  border: 1px solid var(--premium-border, rgba(11, 92, 171, 0.12)) !important;
+  border-top: 4px solid var(--gov-secondary) !important;
+  border-radius: var(--premium-radius, 20px) !important;
+  box-shadow: var(--premium-shadow, 0 24px 60px rgba(2, 28, 60, 0.1)) !important;
+}
+
+.login-page,
+.registration-page,
+.password-reset-page {
+  width: 100%;
+  max-width: none;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.login-page .login-form,
+.registration-page .registration-form,
+.password-reset-page form {
+  background: var(--gov-surface);
+  border: 1px solid var(--gov-border);
+  box-shadow: 0 1px 3px rgba(0, 51, 117, 0.08);
+}
+
+/* Τίτλοι σελίδων: λωρίδα secondary όπως στις δημόσιες υπηρεσίες */
+.search-nannies-page > h2:first-of-type,
+.search-parents-page > h2:first-of-type,
+.about-us-page > h2:first-of-type,
+.admin-dashboard-page > h2:first-of-type,
+.advanced-search-page > h2:first-of-type,
+.appointment-management-page > h2:first-of-type,
+.booking-page > h2:first-of-type,
+.chat-page > h2:first-of-type,
+.completed-vouchers-page > h2:first-of-type,
+.contact-us-page > h2:first-of-type,
+.contract-details-page > h2:first-of-type,
+.contract-page > h2:first-of-type,
+.create-ad-page > h2:first-of-type,
+.edit-nanny-profile-page > h2:first-of-type,
+.edit-profile-page > h2:first-of-type,
+.eligibility-page > h2:first-of-type,
+.faq-page > h2:first-of-type,
+.full-nanny-profile-page > h2:first-of-type,
+.help-page > h2:first-of-type,
+.history-page > h2:first-of-type,
+.how-it-works-page > h2:first-of-type,
+.inbox-page > h2:first-of-type,
+.nanny-dashboard-page > h2:first-of-type,
+.nanny-manage-ads-page > h2:first-of-type,
+.nanny-payment-history-page > h2:first-of-type,
+.nanny-profile-page > h2:first-of-type,
+.nanny-voucher-confirmation-page > h2:first-of-type,
+.notifications-page > h2:first-of-type,
+.outbox-page > h2:first-of-type,
+.parent-dashboard-page > h2:first-of-type,
+.parent-profile-page > h2:first-of-type,
+.password-reset-page > h2:first-of-type,
+.payment-history-page > h2:first-of-type,
+.payment-page > h2:first-of-type,
+.review-details-page > h2:first-of-type,
+.review-page > h2:first-of-type,
+.schedule-page > h2:first-of-type,
+.settings-page > h2:first-of-type,
+.upload-legal-doc-page > h2:first-of-type,
+.vouchers-page > h2:first-of-type,
+.login-page > h2:first-of-type,
+.registration-page > h2:first-of-type {
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 4px solid var(--gov-secondary);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  letter-spacing: -0.02em;
+  color: var(--gov-primary);
+}
+
+/* Κάρτες & πάνελ */
+.nanny-card,
+.parent-card,
+.payment-card,
+.contract-card,
+.review-card,
+.voucher-card,
+.ad-card,
+.notification-card,
+.message-card,
+.appointment-card,
+.history-section,
+.about-wrapper {
+  background-color: var(--gov-bg) !important;
+  border: 1px solid var(--gov-border) !important;
+  border-radius: var(--gov-radius) !important;
+  box-shadow: none !important;
+}
+
+.view-profile-button,
+.advanced-search-button {
+  background-color: var(--gov-link) !important;
+  color: #fff !important;
+}
+
+.view-profile-button:hover,
+.advanced-search-button:hover {
+  background-color: var(--gov-link-hover) !important;
+}
+
+/* Φόρμες — πεδία */
+.search-filters input,
+.search-filters select,
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border: 2px solid var(--gov-border) !important;
+  border-radius: var(--gov-radius) !important;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.search-filters input:focus,
+.search-filters select:focus {
+  outline: 3px solid rgba(0, 163, 200, 0.35);
+  outline-offset: 1px;
+  border-color: var(--gov-secondary) !important;
+}
+
+/* Κουμπιά ακύρωσης / δευτερεύοντα */
+.cancel-button,
+.reset-button[style] {
+  font-family: inherit;
+}
+
+button.secondary,
+.cancel-button {
+  background-color: var(--gov-surface) !important;
+  color: var(--gov-link) !important;
+  border: 2px solid var(--gov-link) !important;
+}
+
+.cancel-button:hover {
+  background-color: var(--gov-bg) !important;
+}
+
